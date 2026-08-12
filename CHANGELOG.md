@@ -19,4 +19,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Notes
 
-- A newer 16-digit NUBAN variant with a 6-digit institution code is described in secondary sources but could not be verified against a primary CBN source or a reconcilable worked example; it is not implemented. See the README for details.
+- Per the CBN's 2020 Revised Standards, Other Financial Institutions use a 6-digit institution code (a 15-digit check-digit seed) instead of the classic 3-digit Deposit Money Bank code; the NUBAN account number itself is still 10 digits. This variant could not be verified against a primary CBN source or a reconcilable worked example and is not implemented. See the README for details.

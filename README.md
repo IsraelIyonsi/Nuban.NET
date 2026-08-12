@@ -91,13 +91,16 @@ same verified algorithm to cover every possible check digit 0 through 9.
 
 ### What is not implemented
 
-Some secondary sources describe a newer 16-digit NUBAN variant with a 6-digit institution code
-(used for Other Financial Institutions such as mobile money operators, alongside the classic
-3-digit Deposit Money Bank code). The CBN's own PDF for this revision blocks automated retrieval,
-and every worked example for the 16-digit variant found in secondary sources failed to reconcile
-against the stated algorithm when recomputed by hand. Rather than guess, Nuban.NET does not
-implement or claim support for that variant. Only the classic, CBN-worked-example-verified
-10-digit NUBAN algorithm ships.
+Per the CBN's 2020 Revised Standards on the NUBAN Scheme, the NUBAN account number itself remains
+10 digits; what changed for Other Financial Institutions (such as mobile money operators) is that
+their institution code grew from 3 digits to 6, alongside the classic 3-digit Deposit Money Bank
+code used elsewhere. That widens the check-digit seed for this variant to 15 digits (6-digit
+institution code + 9-digit serial) under the same `3, 7, 3` weighting. The CBN's own PDF for this
+revision blocks automated retrieval, and every worked example for the 6-digit institution code
+variant found in secondary sources failed to reconcile against the stated algorithm when
+recomputed by hand. Rather than guess, Nuban.NET does not implement or claim support for that
+variant. Only the classic, CBN-worked-example-verified 10-digit NUBAN algorithm with the 3-digit
+bank code seed ships.
 
 ## Dependencies and AOT
 
